@@ -1,9 +1,9 @@
-import { Request, Response } from "express"
+import { Request, Response } from "express";
 
 class SessionsController {
   async create(request: Request, response: Response) {
-    return response.json({ message: "Sessions ok" })
+    return response.json({ message: "Sessions ok" });
   }
 }
 
-export { SessionsController }
+export { SessionsController };
