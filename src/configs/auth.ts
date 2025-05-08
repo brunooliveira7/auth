@@ -1,6 +1,7 @@
+//configuração do token
 export const authConfig = {
   jwt: {
-    secret: process.env.AUTH_SECRET || "default",
+    secret: process.env.AUTH_SECRET || "default", 
     expiresIn: "1d", //validade do token
   }
 };

@@ -10,16 +10,16 @@ class SessionsController {
     //simulando um banco de dados
     const fakeUser = {
       id: 1,
-      username: "Bruno",
+      username: "bruno",
       password: "123456",
     };
 
-    //se não bate o username ou password - passado no  body - insomnia
+    //se não bate o username ou password - passado no body do insomnia
     if (username !== fakeUser.username || password !== fakeUser.password) {
       throw new AppError("Username or password incorrect!", 401);
     }
 
-    //retornando o token
+    //retornando o token - se ok
     const { secret, expiresIn } = authConfig.jwt;
     const token = sign({}, secret, {
       subject: String(fakeUser.id),
