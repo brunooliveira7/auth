@@ -9,7 +9,7 @@ class SessionsController {
 
     //simulando um banco de dados
     const fakeUser = {
-      id: 1,
+      id: "1",
       username: "bruno",
       password: "123456",
     };
