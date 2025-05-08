@@ -3,6 +3,12 @@ import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
 import { authConfig } from "@/configs/auth";
 
+//interface para tipagem payload do token
+interface TokenPayload {
+  role: string;
+  sub: string;
+}
+
 function ensureAuthenticated(
   request: Request,
   response: Response,
@@ -19,12 +25,16 @@ function ensureAuthenticated(
   //retirar o "bearer" - que o insomnia coloca no token
   const [, token] = authHeader.split(" ");
 
-  //verificar se o token é válido
-  const { sub: user_id } = verify(token, authConfig.jwt.secret);
+  //verificar se o token é válido, e extrai o id do usuário, e o papel
+  const { sub: user_id, role } = verify(
+    token,
+    authConfig.jwt.secret
+  ) as TokenPayload;
 
-  //acessando o usuário na request - com tipagem
+  //inseri o id, e o papel na request - com tipagem
   request.user = {
     id: String(user_id),
+    role,
   };
 
   return next();

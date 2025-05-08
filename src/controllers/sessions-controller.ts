@@ -12,6 +12,7 @@ class SessionsController {
       id: "1",
       username: "bruno",
       password: "123456",
+      role: "customer", //papel de cliente
     };
 
     //se não bate o username ou password - passado no body do insomnia
@@ -21,7 +22,8 @@ class SessionsController {
 
     //retornando o token - se ok
     const { secret, expiresIn } = authConfig.jwt;
-    const token = sign({}, secret, {
+    //passando o papel  do usuário, no payload
+    const token = sign({ role: fakeUser.role }, secret, {
       subject: String(fakeUser.id),
       expiresIn,
     });
