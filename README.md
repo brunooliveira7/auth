@@ -1,6 +1,19 @@
+# Auth
 
-Neste módulo, vamos aprender sobre autenticação e autorização em aplicações Node, utilizando tokens JWT para inserir o token na requisição. Vamos entender a diferença entre autenticação e autorização e implementar na prática.
+Esta aplicação em **Node.js** aborda autenticação e autorização utilizando tokens **JWT**.
 
-Neste trecho, é abordado o uso de variáveis de ambiente em um projeto. São explicados os benefícios de separar dados sensíveis em um arquivo .env, como criar e utilizar variáveis de ambiente, e a importância de não expor essas informações no GitHub. Mostra-se também como carregar e utilizar as variáveis de ambiente no projeto, além de dicas práticas, como reiniciar a aplicação ao modificar as variáveis. Por fim, é sugerido incluir o arquivo .env no .gitignore e fornecer um arquivo de exemplo sem os valores sensíveis para compartilhamento.
-Nesta aula, aprendemos a inserir um token de autenticação em requisições para o back-end, utilizando um middleware chamado EnsureAuthenticated. Foi demonstrado como extrair e manipular o token da requisição, garantindo sua correta utilização. O instrutor mostrou como verificar a presença do token, separar o identificador "BEAR" do token e garantir que apenas o token seja utilizado nas requisições. Essa aula focou em extrair e manipular tokens de autenticação em requisições de usuários.
-Nesta aula, é explicado como identificar usuários em uma aplicação, validando tokens e inserindo informações do usuário na requisição. Também é abordado o conceito de papéis de usuários, como definir e inserir esses papéis nos tokens JWT, além de recuperar essas informações. A importância de definir regras de negócio, como restringir acesso a determinadas funcionalidades com base nos papéis dos usuários, também é destacada. O instrutor demonstra passo a passo como implementar essas funcionalidades.
+## Principais Funcionalidades
+
+- Implementação prática da **autenticação** e **autorização**;
+- Proteção de rotas e identificação de usuários com base em tokens JWT;
+- Criação de **middleware** para garantir que apenas usuários autenticados acessem determinadas rotas;
+- Utilização de **papéis de usuários (roles)** para controle de acesso baseado em regras de negócio.
+
+## Boas Práticas com Variáveis de Ambiente
+
+- Uso de arquivos `.env` para armazenar dados sensíveis;
+- Carregamento seguro das variáveis no projeto;
+- Inclusão do `.env` no `.gitignore` para evitar a exposição no GitHub;
+- Criação de um arquivo de exemplo (`.env.example`) para compartilhamento seguro.
+
+Essa abordagem proporciona maior segurança e controle no acesso às funcionalidades da aplicação.
